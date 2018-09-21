@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { View, Animated, ViewPropTypes } from 'react-native';
+import { View, SafeAreaView, Animated, ViewPropTypes } from 'react-native';
 
 import styles from './styles';
 
@@ -64,7 +64,9 @@ export default class Indicator extends PureComponent {
 
     return (
       <View style={[styles.container, { flexDirection }, style]} {...props}>
-        {dots}
+        <SafeAreaView style={[{flexDirection}]}>
+          {dots}
+        </SafeAreaView>
       </View>
     );
   }
