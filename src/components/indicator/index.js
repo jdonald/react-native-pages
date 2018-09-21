@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
-import { View, SafeAreaView, Animated, ViewPropTypes } from 'react-native';
+import { View, Animated, ViewPropTypes } from 'react-native';
+import { ifIphoneX } from 'react-native-iphone-x-helper';
 
 import styles from './styles';
 
@@ -63,10 +64,8 @@ export default class Indicator extends PureComponent {
         'column';
 
     return (
-      <View style={[styles.container, { flexDirection }, style]} {...props}>
-        <SafeAreaView style={[{flexDirection}]}>
-          {dots}
-        </SafeAreaView>
+      <View style={[styles.container, style, { flexDirection, ...ifIphoneX({ bottom: 25 }) }]} {...props}>
+        {dots}
       </View>
     );
   }

@@ -26,7 +26,8 @@
   },
 
   "dependencies": {
-    "prop-types": "^15.5.9"
+    "prop-types": "^15.5.9",
+    "react-native-iphone-x-helper": "^1.1.0"
   },
 
   "scripts": {
